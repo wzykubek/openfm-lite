@@ -1,0 +1,10 @@
+<link rel="icon" type="image/png" href="https://open.fm/logo/50x50/{{ id }}"/>
+{% extends "index.html" %}{% block content %}
+<div id="radio-container" class="single-radio">
+  <img class="small-logo" src="https://open.fm/logo/50x50/{{ id }}">
+  <h2>{{ title }}</h2>
+  <audio controls autoplay>
+    <source src="https://stream.open.fm/{{ id }}" type="audio/mpeg">
+  </audio>
+</div>
+{% endblock %}

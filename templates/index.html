@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ title }}</title>
+    <link rel="icon" type="image/png" href="https://open.fm/img/logo-open-fm-200x200.png"/>
+    <meta property="og:title" content="Open FM Lite" />
+    <meta property="og:description" content="Open FM Lite" />
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <h1>Open FM Lite</h1>
+    {% for channel in channels %}
+    <a href="{{ url_for("radio", id=channel["instance_id"]) }}">
+      <div id="radio-container">
+        <img src="https://open.fm/logo/70x70/{{ channel["instance_id"] }}">
+        <h2>
+            {{ channel["name"] }}
+        </h2>
+      </div>
+    </a>
+    {% endfor %}
+
+    {% block content %}{% endblock %}
+  </body>
+</html>
