@@ -13,11 +13,11 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <h1>Open FM Lite</h1>
+    <a href='{{ url_for("home") }}'><h1>Open FM Lite</h1></a>
     {% for channel in channels %}
-    <a href="{{ url_for("radio", id=channel["instance_id"]) }}">
+    <a href='{{ url_for("radio", id=channel["instance_id"]) }}'>
       <div id="radio-container">
-        <img src="https://open.fm/logo/70x70/{{ channel["instance_id"] }}">
+        <img src='https://open.fm/logo/70x70/{{ channel["instance_id"] }}'>
         <h2>
             {{ channel["name"] }}
         </h2>
